@@ -1,13 +1,13 @@
 const skills = [
-  { id: 1, skill: "Task breakdown", accquired: true },
-  { id: 2, skill: "Problem-solving", accquired: false },
-  { id: 3, skill: "Thoughtful designer", accquired: true },
-  { id: 4, skill: "Continuous learning", accquired: true },
+  { id: 1, skill: 'Task breakdown', accquired: true },
+  { id: 2, skill: 'Problem-solving', accquired: false },
+  { id: 3, skill: 'Thoughtful designer', accquired: true },
+  { id: 4, skill: 'Continuous learning', accquired: true },
 ];
 
 module.exports = {
   getAll,
-  getOne,
+  getOne
 };
 
 function getAll() {
