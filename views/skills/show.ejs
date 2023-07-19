@@ -1,7 +1,7 @@
-<%- include('../partials/header', { title: 'Developer Skills' }) %>
+<%- include('../partials/header') %>
 
 <h3><%= skill.skill %></h3>
-<h3>Accquired: <%= skill.accquired? 'Yes' : 'No' %></h3>
+<h3>Accquired: <%= skill.accquired ? 'Yes' : 'No' %></h3>
 <a href="/skills/<%= skill.id %>/edit">Edit skills</a>
 
 <%- include('../partials/footer') %>

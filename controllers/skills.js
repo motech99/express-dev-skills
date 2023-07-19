@@ -1,15 +1,26 @@
 const Skill = require('../models/skill');
 
+module.exports = {
+  index,
+  show,
+  new: newSkill,
+  create,
+  delete: deleteSkill,
+  edit,
+  update
+};
 
 function index(req, res) {
   res.render('skills/index', {
     skills: Skill.getAll(),
+    title: 'All Skills'
   });
 }
 
 function show(req, res) {
   res.render('skills/show', {
     skill: Skill.getOne(req.params.id),
+    title: 'Skill Details'
   });
 }
 
@@ -19,7 +30,7 @@ function newSkill(req, res) {
 
 function create(req, res) {
   console.log(req.body);
-  Todo.create(req.body);
+  Skill.create(req.body);
   res.redirect('/skills');
 }
 
@@ -37,20 +48,9 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  req.body.done = !!req.body.done;
+  req.body.accquired = !!req.body.accquired;
   Skill.update(req.params.id, req.body);
   res.redirect(`/skills/${req.params.id}`);
 }
-
-module.exports = {
-  index,
-  show,
-  new: newSkill,
-  create,
-  delete: deleteSkill,
-  edit,
-  update
-};
-
 
 
